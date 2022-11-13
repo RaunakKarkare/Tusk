@@ -3,3 +3,6 @@ Welcome to Raunak's kitchen
 kheer
 pasta
 momos
+
+Beans
+Pizza
