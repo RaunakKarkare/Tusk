@@ -1,0 +1,66 @@
+var itemlist=document.querySelector('#items')
+console.log(itemlist.parentNode)
+itemlist.parentNode.style.backgroundColor='#ccc'
+console.log(itemlist.parentNode.parentNode)
+console.log(itemlist.parentElement.parentElement)
+console.log(itemlist.childNodes)
+console.log(itemlist.children)
+itemlist.children[1].style.backgroundColor='yellow'
+console.log(itemlist.firstChild);
+console.log(itemlist.firstElementChild);
+itemlist.firstElementChild.textContent='hello DOM'
+
+
+console.log(itemlist.lastElementChild);
+itemlist.lastElementChild.textContent='hello 4'
+
+console.log(itemlist.nextSibling)
+console.log(itemlist.nextElementSibling)
+console.log(itemlist.previousSibling)
+console.log(itemlist.previousElementSibling)
+
+
+//create an element
+
+//create a div
+
+var div=document.createElement('div')
+console.log(div)
+div.className='hello'
+div.id='pikachu'
+
+div.setAttribute('title','hello div')
+
+//add text node
+
+var newdivtext=document.createTextNode('Hello World')
+
+//add text to div
+
+div.appendChild(newdivtext)
+
+console.log(div)
+
+//adding new div in the dom
+
+var container=document.querySelector('header .container')
+var h1=document.querySelector('header h1')
+container.insertBefore(div,h1)
+
+
+var div1=document.createElement('div1')
+console.log(div1)
+div1.className='hello1'
+div1.id='pikachu1'
+
+
+div1.setAttribute('title1','hello div1')
+var newdivtext1=document.createTextNode('Hello World1')
+
+
+div.setAttribute('title','hello div')
+div1.appendChild(newdivtext1)
+var beforeitem1=document.querySelector('#item1');
+var itemmms=document.querySelector('#items')
+beforeitem1.insertBefore(div1,itemmms)
+
