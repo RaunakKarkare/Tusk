@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <form onsubmit="savetolocal(event)">
+            <label>Username</label>
+            <input type="text" name="username"/>
+            <label>Email</label>
+            <input type="email" name="email"/>
+            
+            <input type="submit" name="submit"/>
+        </form>
+    
+    </body>
+    <script>
+        function savetolocal(event)
+        {
+            event.preventDefault()
+            const name=event.target.username.value
+            const email=event.target.email.value;
+            localStorage.setItem('name',name)
+            localStorage.setItem('email',email)
+        }
+        
+    </script>
+</html>
