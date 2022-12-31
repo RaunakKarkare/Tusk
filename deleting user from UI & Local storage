@@ -1,0 +1,61 @@
+<html>
+    <body>
+        <form onsubmit="savetolocal(event)">
+            <label>Username</label>
+            <input type="text" name="username"/>
+            <label>Email</label>
+            <input type="email" name="email"/>
+            
+            <input id="del" type="submit" name="submit"/>
+          
+        </form>
+        <ul id="items">
+
+            
+        </ul>
+    
+    </body>
+    <script>
+        function savetolocal(event)
+        {
+            event.preventDefault()
+            const name=event.target.username.value
+            const email=event.target.email.value;
+            localStorage.setItem('name',name)
+            localStorage.setItem('email',email)
+            let details=name+"-"+email;
+            let myobj={name:name,
+         email:email
+
+
+        } 
+
+        localStorage.setItem(email,JSON.stringify(myobj))
+       
+      
+    
+      
+        const deletebutton = document.createElement("input");
+        deletebutton.type="button"
+        deletebutton.value="Delete"
+        const node = document.createElement("li");
+        const textnode = document.createTextNode(details)
+        node.appendChild(textnode);
+        document.getElementById("items").appendChild(node);
+
+        node.appendChild(deletebutton)
+
+        
+       deletebutton.onclick =() =>{
+        document.getElementById("items").removeChild(node)
+        localStorage.removeItem(email)
+      
+
+        
+       }
+
+        }
+       
+        
+    </script>
+</html>
