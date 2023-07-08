@@ -1,0 +1,58 @@
+<html>
+    <body>
+        <form onsubmit="savetolocal(event)">
+            <label>Choose expense amount:</label>
+            <input type="text" name="username"/>
+            <label>Choose description:</label>
+            <input type="text" name="email"/>
+            <label>Choose a category:</label>
+            <select name="cars" id="cars">
+                <option value="volvo">Volvo</option>
+                <option value="saab">Saab</option>
+                <option value="mercedes">Mercedes</option>
+                <option value="audi">Audi</option>
+            </select>
+            <input type="submit" name="submit"/>
+            <!-- <input type="submit" name="delete" id="123"/>
+            <input type="submit" name="edit"/> -->
+            
+
+        </form>
+        <ul id="items">
+
+            
+        </ul>
+    
+    </body>
+    <script>
+        function savetolocal(event)
+        {
+            event.preventDefault()
+            const name=event.target.username.value
+            const email=event.target.email.value;
+            const category=event.target.cars.value;
+            localStorage.setItem('name',name)
+            localStorage.setItem('email',email)
+            localStorage.setItem('category',category)
+            let details=name+"-"+email+"-"+category;
+            let myobj={name:name,
+         email:email,category:category
+
+        } 
+
+        const obj=JSON.stringify(myobj)
+        localStorage.setItem('obj',obj)
+      
+        document.appendChild
+        const node = document.createElement("li");
+        const textnode = document.createTextNode(details);
+        node.appendChild(textnode);
+        
+
+        document.getElementById("items").appendChild(node);
+
+        }
+       
+        
+    </script>
+</html>
